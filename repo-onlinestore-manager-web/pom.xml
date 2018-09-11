@@ -6,7 +6,7 @@
 	<groupId>com.zhangyongbin.onlinestore</groupId>
 	<artifactId>repo-onlinestore-manager-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>repo-onlinestore-manager-web</name>
 	<description>manager web project for onlinestore with Spring Boot</description>
@@ -27,12 +27,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.0.4.RELEASE</version>
 		</dependency>
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>-->
+		</dependency>
 	</dependencies>
 
 	<build>
