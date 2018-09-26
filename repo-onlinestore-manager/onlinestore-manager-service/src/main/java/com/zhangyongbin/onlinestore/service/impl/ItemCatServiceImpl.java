@@ -1,0 +1,38 @@
+package com.zhangyongbin.onlinestore.service.impl;
+
+import com.alibaba.dubbo.config.annotation.Service;
+import com.zhangyongbin.onlinestore.common.pojo.EasyUITreeNode;
+import com.zhangyongbin.onlinestore.mapper.TbItemCatMapper;
+import com.zhangyongbin.onlinestore.pojo.TbItemCat;
+import com.zhangyongbin.onlinestore.pojo.TbItemCatExample;
+import com.zhangyongbin.onlinestore.service.ItemCatService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service(version = "1.0.0",timeout = 300000)
+public class ItemCatServiceImpl implements ItemCatService {
+    @Autowired
+    TbItemCatMapper itemCatMapper;
+    @Override
+    public List<EasyUITreeNode> getItemCatList(long parentId) {
+        //根据parentId查询节点列表
+        TbItemCatExample example = new TbItemCatExample();
+        //设置查询条件
+        TbItemCatExample.Criteria criteria = example.createCriteria();
+        criteria.andParentIdEqualTo(parentId);
+        List<TbItemCat> list = itemCatMapper.selectByExample(example);
+        //将list转换成EasyUITreeNode列表
+        List<EasyUITreeNode> resultList = new ArrayList<EasyUITreeNode>();
+        for(TbItemCat tbItemCat : list){
+            EasyUITreeNode node = new EasyUITreeNode();
+            node.setId(tbItemCat.getId());
+            node.setText(tbItemCat.getName());
+            //如果是父节点，那么就是closed，如果是子节点，那么就是open
+            node.setState(tbItemCat.getIsParent()? "closed" : "open");
+            resultList.add(node);
+        }
+        return resultList;
+    }
+}

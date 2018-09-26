@@ -10,6 +10,8 @@
         <module>repo-onlinestore-common</module>
         <module>repo-onlinestore-manager</module>
         <module>repo-onlinestore-manager-web</module>
+        <module>repo-onlinestore-content</module>
+        <module>repo-onlinestore-portal-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -27,17 +29,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <!--<spring-jms.version>4.2.4.RELEASE</spring-jms.version>-->
         <junit.version>4.12</junit.version>
         <jackson.version>2.9.5</jackson.version>
         <httpclient.version>4.3.5</httpclient.version>
         <joda-time.version>2.5</joda-time.version>
         <quartz.version>2.2.2</quartz.version>
-        <!--<slf4j.version>1.6.4</slf4j.version>-->
+        <slf4j.version>1.6.4</slf4j.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
         <druid.version>1.1.10</druid.version>
-        <pagehelper.version>4.1.6</pagehelper.version>
+        <pagehelper.version>1.2.7</pagehelper.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <jedis.version>2.7.2</jedis.version>
         <solrj.version>4.10.3</solrj.version>
@@ -115,46 +118,51 @@
                 <artifactId>spring-boot-starter-activemq</artifactId>
                 <version>${spring-boot-starter-activemq-version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring-jms.version}</version>
+            </dependency>-->
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${spring-boot-starter-redis-version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-solr</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>
-            <dependency>
+            </dependency>-->
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-freemarker</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>
-            <dependency>
+            </dependency>-->
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-mail</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>
-            <dependency>
+            </dependency>-->
+            <!--<dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-quartz</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot}</version>
             </dependency>
             <dependency>
+                <!--<groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>-->
                 <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper</artifactId>
-               <!-- <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
             <dependency>
@@ -198,27 +206,27 @@
                 <artifactId>spring-boot-starter-dubbo</artifactId>
                 <version>${dubbo-spring-boot}</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>${zookeeper.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>slf4j-log4j12</artifactId>
-                        <groupId>org.slf4j</groupId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>com.github.sgroschupf</groupId>
-                <artifactId>zkclient</artifactId>
-                <version>${zkclient.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.activemq</groupId>
-                <artifactId>activemq-all</artifactId>
-                <version>${activemq.version}</version>
-            </dependency>
+            <!-- <dependency>
+                 <groupId>org.apache.zookeeper</groupId>
+                 <artifactId>zookeeper</artifactId>
+                 <version>${zookeeper.version}</version>
+                 <exclusions>
+                     <exclusion>
+                         <artifactId>slf4j-log4j12</artifactId>
+                         <groupId>org.slf4j</groupId>
+                     </exclusion>
+                 </exclusions>
+             </dependency>
+             <dependency>
+                 <groupId>com.github.sgroschupf</groupId>
+                 <artifactId>zkclient</artifactId>
+                 <version>${zkclient.version}</version>
+             </dependency>-->
+            <!-- <dependency>
+                 <groupId>org.apache.activemq</groupId>
+                 <artifactId>activemq-all</artifactId>
+                 <version>${activemq.version}</version>
+             </dependency>-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -239,7 +247,7 @@
             </dependency>
             <!-- JSP相关 -->
             <dependency>
-                <groupId>jstl</groupId>
+                <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
                 <version>${jstl.version}</version>
             </dependency>

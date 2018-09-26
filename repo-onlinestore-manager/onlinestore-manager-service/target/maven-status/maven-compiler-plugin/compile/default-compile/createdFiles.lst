@@ -1,0 +1,6 @@
+com\zhangyongbin\onlinestore\jedis\JedisClientCluster.class
+com\zhangyongbin\onlinestore\service\impl\ItemServiceImpl.class
+com\zhangyongbin\onlinestore\OnlinestoreManagerServiceApplication.class
+com\zhangyongbin\onlinestore\jedis\JedisClient.class
+com\zhangyongbin\onlinestore\config\JedisConfig.class
+com\zhangyongbin\onlinestore\service\impl\ItemCatServiceImpl.class
