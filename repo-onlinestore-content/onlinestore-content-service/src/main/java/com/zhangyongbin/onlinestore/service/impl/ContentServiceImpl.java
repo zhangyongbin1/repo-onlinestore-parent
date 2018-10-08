@@ -112,7 +112,6 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public List<TbContent> getAdContentByCid(Long cid) {//首页打广告轮播图实现的service
         //根据内容分类ID查询Tbcontent
-        //根据内容分类ID查询Tbcontent
         try {
             //向数据库查询之前先看缓存中是否存在，加try catch模块是为了不影响正常业务逻辑
             String json = jedisClientCluster.hget(INDEX_CONTENT, Long.toString(cid));

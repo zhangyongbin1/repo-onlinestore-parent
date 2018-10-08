@@ -3,4 +3,5 @@ D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-man
 D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-manager-service\src\main\java\com\zhangyongbin\onlinestore\OnlinestoreManagerServiceApplication.java
 D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-manager-service\src\main\java\com\zhangyongbin\onlinestore\config\JedisConfig.java
 D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-manager-service\src\main\java\com\zhangyongbin\onlinestore\jedis\JedisClient.java
+D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-manager-service\src\main\java\com\zhangyongbin\onlinestore\config\JmsTopicConfig.java
 D:\IdeaProjects\repo-onlinestore-parent\repo-onlinestore-manager\onlinestore-manager-service\src\main\java\com\zhangyongbin\onlinestore\service\impl\ItemCatServiceImpl.java
