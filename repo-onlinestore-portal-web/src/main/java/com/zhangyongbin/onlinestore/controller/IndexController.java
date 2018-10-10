@@ -27,7 +27,7 @@ public class IndexController {//在展示首页之前，先对首页需要的数
     private Integer AD1_HEIGHT;
     @Value("${AD1_HEIGHT_B}")
     private Integer AD1_HEIGHT_B;
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String showIndex(Model model){
         List<TbContent> list = contentService.getAdContentByCid(AD1_CATEGORY_ID);
         List<AD1Node> ad1List = new ArrayList<>();

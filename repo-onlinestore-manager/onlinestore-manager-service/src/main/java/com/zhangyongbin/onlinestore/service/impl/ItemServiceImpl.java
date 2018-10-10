@@ -18,6 +18,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.jms.Topic;
@@ -156,6 +158,8 @@ public class ItemServiceImpl implements ItemService {
         TbItemParamItemExample.Criteria criteria1 = tbItemParamItemExample.createCriteria();
         criteria1.andItemIdEqualTo(itemId);
         tbItemParamItemMapper.updateByExampleSelective(tbItemParamItem, tbItemParamItemExample);
+        //测试事务
+//        int i = 1/0;
         //同步缓存,mysql数据库更新成功后再次根据商品直接删除缓存，保证redis与mysql数据库的同步(在多线程的环境下)
         if (jedisClientCluster.exists(ITEM_INFO + ":" + Long.toString(itemId) + ":DESC")) {
             jedisClientCluster.del(ITEM_INFO + ":" + Long.toString(itemId) + ":DESC");

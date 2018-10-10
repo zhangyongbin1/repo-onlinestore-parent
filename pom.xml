@@ -14,6 +14,9 @@
         <module>repo-onlinestore-portal-web</module>
         <module>repo-onlinestore-search</module>
         <module>repo-onlinestore-search-web</module>
+        <module>repo-onlinestore-itemdetails-web</module>
+        <module>repo-onlinestore-sso</module>
+        <module>repo-onlinestore-sso-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -125,11 +128,11 @@
                 <artifactId>spring-jms</artifactId>
                 <version>${spring-jms.version}</version>
             </dependency>-->
-            <!--<dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
                 <version>2.0.4.RELEASE</version>
-            </dependency>-->
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>

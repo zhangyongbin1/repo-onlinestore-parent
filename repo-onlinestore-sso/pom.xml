@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>repo-onlinestore-parent</artifactId>
+        <groupId>com.zhangyongbin.onlinestore</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>repo-onlinestore-sso</artifactId>
+    <packaging>pom</packaging>
+
+    <name>repo-onlinestore-sso</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+    <modules>
+        <module>onlinestore-sso-interface</module>
+        <module>onlinestore-sso-pojo</module>
+        <module>onlinestore-sso-dao</module>
+        <module>onlinestore-sso-service</module>
+    </modules>
+
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zhangyongbin.onlinestore</groupId>
+            <artifactId>repo-onlinestore-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+
+    </build>
+</project>
